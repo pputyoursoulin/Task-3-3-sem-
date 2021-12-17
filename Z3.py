@@ -23,19 +23,22 @@ try:
 
     dist = math.sqrt((CoordX1-CoordX2)**2  + (CoordY1-CoordY2)**2)
 
-    if dist < math.fabs(Radius1-Radius2):
-        print('One circle is in another circle\n')
+    if (Radius1 <= 0) or (Radius1 <= 0):
+        print('Error!!! The data in the file is incorrect!\n')
     else:
-        if dist > (Radius1+Radius2):
-            print('One circle lies outside the other\n')
+        if dist < math.fabs(Radius1-Radius2):
+            print('One circle is in another circle\n')
         else:
-            if dist == math.fabs(Radius1-Radius2):
-                print('The circles touch from the inside\n')
+            if dist > (Radius1+Radius2):
+                print('One circle lies outside the other\n')
             else:
-                if dist == (Radius1+Radius2):
-                    print('The circles touch from the outside\n')
+                if dist == math.fabs(Radius1-Radius2):
+                    print('The circles touch from the inside\n')
                 else:
-                    print('The circles intersect at two points\n')
+                    if dist == (Radius1+Radius2):
+                        print('The circles touch from the outside\n')
+                    else:
+                        print('The circles intersect at two points\n')
                     
 except ValueError:
     print('Error!!! The data in the file is incorrect!\n')
